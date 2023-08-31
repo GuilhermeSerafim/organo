@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Banner from './componentes/Banner/banner';
+import Banner from './componentes/Banner/Banner.js';
 
 function App() {
   //note que utilizamos um componente que criamos, através do import e marcando ele
