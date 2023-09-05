@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './CampoTexto.css'
 
 const CampoTexto = (props) => {
@@ -5,10 +6,13 @@ const CampoTexto = (props) => {
     //template string para melhorar a legibilidade do codigo
     const placeholderModificada = `${props.placeholder}...`;
 
-    let valor = '';
+    // let valor = 'Guilherme';
+    
+    //valor inicial(''), novo valor(qnd chama o useState)
+    const [valor, setValor] = useState('Guilherme Serafim');
 
     const aoDigitado = (evento) => {
-        valor = evento.target.value;
+        setValor(evento.target.value);
         console.log(valor);
     }
 
@@ -17,7 +21,7 @@ const CampoTexto = (props) => {
             <label>
                 {props.label}
             </label>
-            <input value={"Guilherme"} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}></input>
+            <input onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}></input>
         </div>
     );
 };
