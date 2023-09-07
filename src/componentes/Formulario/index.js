@@ -3,7 +3,7 @@ import Botao from '../Botao';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
-const Formulario = () => {
+const Formulario = (props) => {
 
     //valor inicial, valor inserido
     const [nome, setNome] = useState('');
@@ -23,7 +23,13 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
-        console.log("Form foi submetido =>", nome, cargo, imagem, time);
+        
+        props.aoColaboradorCadastrado([
+            nome, //mesma coisa que isso nome: nome (basicamente ele vai criar uma props chamada nome, e vai atribuir esse valor aqui :nome)
+            cargo,
+            imagem,
+            time
+        ]);
     }
 
     return (
