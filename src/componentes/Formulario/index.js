@@ -19,6 +19,7 @@ const Formulario = (props) => {
             imagem,
             time
         })
+        //Aqui é para que assim que ao salvar, as strings ficarem vazias
         setNome('')
         setCargo('')
         setImagem('')
