@@ -2,13 +2,10 @@ import './CampoTexto.css'
 
 const CampoTexto = (props) => {
 
-    //template string para melhorar a legibilidade do codigo
-    const placeholderModificada = `${props.placeholder}...`;
-
-    // let valor = 'Guilherme';
+    const placeholderModificada = `${props.placeholder}...` 
 
     const aoDigitado = (evento) => {
-        props.aoAlterado(evento.target.value);
+        props.aoAlterado(evento.target.value)
     }
 
     return (
@@ -16,10 +13,9 @@ const CampoTexto = (props) => {
             <label>
                 {props.label}
             </label>
-            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}></input>
+            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/>
         </div>
-    );
-};
+    )
+}
 
-//forma padrão de exportação - vamos seguir com essa abordagem
-export default CampoTexto;
+export default CampoTexto

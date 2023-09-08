@@ -1,61 +1,68 @@
-import { useState } from "react";
-import Banner from "./componentes/Banner";
-import CampoTexto from "./componentes/CampoTexto";
-import Formulario from "./componentes/Formulario";
-import Time from "./componentes/Time";
+import { useState } from 'react';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
 
   const times = [
-    //Criamos uma lista de objetos | Não é String, igual nos ex. de console.log (era so pra entender)
     {
       nome: 'Programação',
-      corPrimaria: '#57c278',
-      corSecundaria: '#D9f7e9'
+      corPrimaria: '#57C278',
+      corSecundaria: '#D9F7E9'
     },
     {
       nome: 'Front-End',
       corPrimaria: '#82CFFA',
-      corSecundaria: '#E9f9ff'
+      corSecundaria: '#E8F8FF'
     },
     {
       nome: 'Data Science',
-      corPrimaria: '#a6d157',
-      corSecundaria: '#f0f8e2'
+      corPrimaria: '#A6D157',
+      corSecundaria: '#F0F8E2'
     },
     {
       nome: 'Devops',
-      corPrimaria: '#e06b69',
-      corSecundaria: '#fde7e8'
+      corPrimaria: '#E06B69',
+      corSecundaria: '#FDE7E8'
     },
     {
       nome: 'UX e Design',
-      corPrimaria: '#db6ebf',
-      corSecundaria: '#fae9f5'
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
     {
       nome: 'Mobile',
-      corPrimaria: '#ffba05',
-      corSecundaria: '#fff5d9'
+      corPrimaria: '#FFBA05',
+      corSecundaria: '#FFF5D9'
     },
     {
       nome: 'Inovação e Gestão',
-      corPrimaria: '#ff8a29',
-      corSecundaria: '#ffeedf'
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF'
     }
   ]
-  
-  const [colaboradores, setColaboradores] = useState ([]);
+
+  const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
+    console.log(colaborador)
+    setColaboradores([...colaboradores, colaborador])
   }
 
   return (
     <div className="App">
-      <Banner/>
-      <Formulario nomeDosTimes={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
-      {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+      <Banner />
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}   
+
     </div>
   );
 }

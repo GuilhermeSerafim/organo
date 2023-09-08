@@ -1,17 +1,15 @@
-import './Colaborador.css';
+import './Colaborador.css'
 
-const Colaborador = () => {
-    return (
-        <div className='colaborador'>
-            <div className='cabecalho'>
-                <img src='https://github.com/guilhermeserafim.png' alt='Guilherme Serafim'/>  
-            </div>
-            <div className='rodape'>
-                <h4>Guilherme Serafim</h4>
-                <h5>CEO</h5>
-            </div>
+const Colaborador = (props) => {
+    return (<div className='colaborador'>
+        <div className='cabecalho'>
+            <img src={props.imagem} alt={props.nome}/>
         </div>
-    )
+        <div className='rodape'>
+            <h4>{props.nome}</h4>
+            <h5>{props.cargo}</h5>
+        </div>
+    </div>)
 }
 
-export default Colaborador;
+export default Colaborador
