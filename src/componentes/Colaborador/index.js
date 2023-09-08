@@ -1,5 +1,6 @@
 import './Colaborador.css'
 
+//A vantagem é que quando batemos o olho nesse componente, ja sabemos que atributos ela vai passar as props
 const Colaborador = ({nome, imagem, cargo}) => {
     return (<div className='colaborador'>
         <div className='cabecalho'>

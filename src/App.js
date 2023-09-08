@@ -60,6 +60,7 @@ function App() {
         nome={time.nome} 
         corPrimaria={time.corPrimaria} 
         corSecundaria={time.corSecundaria} 
+        //Ou seja, só vai aparecer o colaborador no time dele
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}   
 
