@@ -1,5 +1,6 @@
 .campo-texto {
     margin: 24px 0;
+    position: relative;
 }
 
 .campo-texto label {
@@ -12,8 +13,15 @@
     background-color: #ffffff;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
-    border: none;
+    border: 2px solid transparent;
     font-size: 24px;
     padding: 24px;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out; /* Adicione uma transição suave para todas as propriedades */
+}
+
+.campo-texto input:focus {
+    border-color: #82CFFA; /* Mude a cor da borda quando o campo está ativo */
+    outline: none; /* Remover a borda de foco padrão */
+    transform: scale(1.05); /* Faça o campo crescer um pouco quando estiver ativo */
 }
