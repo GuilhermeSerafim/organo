@@ -11,7 +11,7 @@ const Time = (props) => {
                 {props.colaboradores.map( colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/> )}
             </div>
         </section> 
-        : ''
+        : '' /* Criar um componente vazio aqui, para os astronautas futuramente */
     )
 }
 
